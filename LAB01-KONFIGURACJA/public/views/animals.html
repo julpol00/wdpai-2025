@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/animals.css">
     <script src="https://kit.fontawesome.com/6c7c83f719.js" crossorigin="anonymous"></script>
     <title>Animals</title>
 </head>
@@ -11,7 +12,7 @@
     <header>
         <div class="logo-title">
             <img src="../img/logo_2.svg" alt="Rodent Analytics logo">
-            <div class="title-text">
+            <div class = "title-text">
             <span class="rodent">RODENT</span>
             <span class="analytics">ANALYTICS</span>
             </div>
@@ -20,21 +21,28 @@
     <div class="base-container">
         <nav>
             <ul>
-                <li><i class="fa-solid fa-paw"></i> <a href="#" class="button">animals</a> </li>
-                <li><i class="fa-solid fa-chart-simple"></i><a href="#" class="button">analysis</a> </li>
-                <li><i class="fa-solid fa-bell"></i> <a href="#" class="button">notification</a> </li>
-                <li><i class="fa-solid fa-gears"></i> <a href="#" class="button">settings</a> </li>
+                <div class="menu-group">
+                <li><i class="fa-solid fa-paw"></i> <a href="#" class="button">ANIMALS</a> </li>
+                <li><i class="fa-solid fa-chart-simple"></i><a href="#" class="button">ANALYSIS</a> </li>
+                <li><i class="fa-solid fa-bell"></i> <a href="#" class="button">NOTIFICATION</a> </li>
+                </div>
+                <li class="bottom-item"><i class="fa-solid fa-gears"></i> <a href="#" class="button">SETTINGS</a> </li>
             </ul>
          </nav>
         <main>
-        <div class="animals-grid">
-            <div> animal 1</div>
-            <div> animal 2</div>
-            <div> animal 3</div>
-            <div> animal 4</div>
-            <div> animal 5</div>
+        <section class="animals-grid">
+                <div class="frame">
+                    <div class="overlap-group">
+                        <div class="rectangle"></div>
+                        <div class="text-wrapper">Rufus</div>
+                    </div>
+                </div>
+            <div id="animal-2"> animal 2</div>
+            <div id="animal-3"> animal 3</div>
+            <div id="animal-4"> animal 4</div>
+            <div id="animal-5"> animal 5</div>
             <div class="add-animal"> <i class="fa-solid fa-plus"></i></div>
-        </div>
+        </section>
     </main>
     </div>
 

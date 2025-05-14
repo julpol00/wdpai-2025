@@ -1,0 +1,45 @@
+
+section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.frame {
+  width: 20em; 
+  height: 24em; 
+  overflow: hidden;
+  border-radius: 2.5em 2.5em 2.5em 2.5em; 
+  border: 1vh solid #5d2e8c;
+  background-image: url("../img/uploads/campbella-chomik.png");
+}
+
+.frame .rectangle {
+  position: absolute;
+
+  background-color: #5d2e8c;
+  border: 1vh solid #5d2e8c;
+  border-radius: 2.5em 2.5em 0 0;
+
+  display: flex;
+  justify-content: center; /* poziome wyśrodkowanie */
+  align-items: center;     /* pionowe wyśrodkowanie */
+}
+
+.frame .text-wrapper {
+  font-family: "Inter-Black", Helvetica;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 2.6em;
+  text-align: center;
+  letter-spacing: 0.26em;
+  line-height: normal;
+
+  /* usuń absolutne pozycjonowanie */
+  position: static;
+  height: auto;
+  top: auto;
+  left: auto;
+}

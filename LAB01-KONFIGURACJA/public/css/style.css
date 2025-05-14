@@ -133,6 +133,7 @@ header{
 .title-text {
   display: flex;
   flex-direction: column;
+  align-items: center; 
   line-height: 1;
   font-weight: bold;
   color: #340773c9;
@@ -147,17 +148,12 @@ a {
 
 }
 
-li i {
-font-size: 1.5em;
-}
-
 .button{
     border: 1px solid #6fb6af;
     border-radius:1em ;
-    margin-left: 1em;
     text-align: center;
     font-weight: bold; 
-    font-family:"Inter-Black", Helvetica;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.7px;
     color: #6fb6af;
     padding: 0.2em;
@@ -173,20 +169,46 @@ ul{
     width: calc(100% - 40px);
     position: relative;
     margin: 0 auto;
-    padding: 0;
+    padding: 2em 0;
+    flex-direction: column;
+    justify-content: flex-start;  
+    align-items: flex-start; 
+
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
 }
 
 li {
-    text-align: left;
-    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    width: 100%;
 
 }
 
-li:last-child{
+li i{
+    font-size: 1.5em;
+    margin-right: 0.7em; 
+}
+
+.bottom-item {
     position: absolute;
     bottom: 0;
     width: 100%;
 }
+
+main{
+        background: linear-gradient(
+        180deg,
+        rgba(118, 134, 166, 1) 46%,
+        rgba(93, 46, 140, 1) 100%
+      );
+
+}
+
 
 @media only screen and (max-device-width: 420px) {
     body {
