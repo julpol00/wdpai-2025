@@ -11,9 +11,9 @@ main {
   gap: 4vw;
   align-items: stretch; 
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1500px;
   min-height: 400px;
-  height: 20vh;
+  height: 50vh;
 }
 
 .photo-section {

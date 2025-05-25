@@ -4,7 +4,7 @@ section{
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
     padding: 2em;
-    margin: auto;
+    margin: 5em auto 0 auto;
     max-width: 1200px;
     overflow: auto;
 }
