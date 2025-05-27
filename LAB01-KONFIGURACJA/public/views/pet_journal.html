@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/pet_journal.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://kit.fontawesome.com/6c7c83f719.js" crossorigin="anonymous"></script>
     <title>Pet Journal</title>
 </head>
@@ -44,21 +44,40 @@
                 </div>
                 </div>
 
-                <div class="calendar">
+                    <div class="calendar">
                     <section class="calendar-section">
-                    <label for="calendar" class="calendar-label">CHOSE DAY</label>
-                    <input type="date" id="calendar" class="calendar-input" />
-                    </section>
-                </div>
+                        <label for="calendar" class="calendar-label">CHOOSE DAY</label>
+                        
+                        <div class="calendar-row">
+                        <input type="date" id="calendar" class="calendar-input" />
+                        <span class="calendar-weight">weight: 250g</span>
+                        </div>
 
-                 <div class="journal">
-                                        <div class="card">
-                    <img src="../img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
+                        <div class="notes-section">
+                        <div class="notes-list">
+                            <div class="note">
+                            <div class="note-time">8:00</div>
+                            <div class="note-time">9:00</div>
+                            <div class="note-text">playing</div>
+                            </div>
+                            <div class="note">
+                            <div class="note-time">10:00</div>
+                            <div class="note-time">13:00</div>
+                            <div class="note-text">sleeping</div>
+                            </div>
+
+                            <div class="note-form">
+                            <input type="time" class="input-time" required   value="00:00"/>
+                            <input type="time" class="input-time" required  value="00:00"/>
+                            <input type="text" class="note-input" placeholder="Add note..." required />
+                            </div>
+                        </div>
+                        <div class="add-button"> ADD ACTIVITY</div>
+                        </div>
+                
+                        
+                    </section>
                     </div>
-                    <div class="normal-text">Poziomka</div>
-                    <div class="normal-text">Ground Squirrel</div>
-                    <div class="normal-text">2 year</div>
-                    <div class="long-text">info about Poziomka</div>
                  </div>
                 </div>
     </main>
