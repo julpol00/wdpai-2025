@@ -1,0 +1,69 @@
+
+.calendar-label{
+    color:  #5d2e8c;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+label {
+  display: flex;
+  color: #6fb6af;
+  flex-direction: column;
+  align-items: center; 
+  font-size: 1em;    
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+label input[type="checkbox"] {
+  margin-bottom: 0.5em; 
+  width: 3vw;
+  height: 3vh;
+}
+
+.repeat-info{
+    color:  #5d2e8c;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.select-section{
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  color:  #5d2e8c;
+  background-color: white;
+  gap: 1em;
+
+  padding: 1em 1.5em;            
+  border-radius: 0.8em;          
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.animal-label {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #5d2e8c;
+}
+
+#animal {
+  font-size: 1.5em;
+  padding: 0.3em 0.5em;
+  color: #5d2e8c;
+}
+
+#confirm {
+  background-color: #5d2e8c;
+  color: #cde2de;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6vw;
+  height: 4vh;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
