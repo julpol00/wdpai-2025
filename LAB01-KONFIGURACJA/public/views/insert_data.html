@@ -10,6 +10,11 @@
 </head>
 <body>
     <header>
+          <div class="ham-menu" id="hamMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="logo-title">
             <img src="../img/logo_2.svg" alt="Rodent Analytics logo">
             <div class = "title-text">
@@ -19,7 +24,7 @@
         </div>
     </header>
     <div class="base-container">
-        <nav>
+        <nav id="sideNav">
             <ul>
                 <div class="menu-group">
                 <li><i class="fa-solid fa-paw"></i> <a href="#" class="button">ANIMALS</a> </li>
@@ -49,6 +54,18 @@
             </div>
     </main>
     </div>
+
+    
+    <script>
+    const hamMenu = document.getElementById('hamMenu');
+    const nav = document.getElementById('sideNav');
+
+    hamMenu.addEventListener('click', () => {
+        hamMenu.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    </script>
+
 
 </body>
 </html>

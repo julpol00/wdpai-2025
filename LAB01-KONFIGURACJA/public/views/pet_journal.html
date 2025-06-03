@@ -10,6 +10,11 @@
 </head>
 <body>
     <header>
+        <div class="ham-menu" id="hamMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="logo-title">
             <img src="../img/logo_2.svg" alt="Rodent Analytics logo">
             <div class = "title-text">
@@ -19,7 +24,7 @@
         </div>
     </header>
     <div class="base-container">
-        <nav>
+        <nav  id="sideNav">
             <ul>
                 <div class="menu-group">
                 <li><i class="fa-solid fa-paw"></i> <a href="#" class="button">ANIMALS</a> </li>
@@ -32,16 +37,19 @@
         <main>
                 <div class="wrapper">
                 <div class="pet-profile">
-                    <div class="text-group">
-                    <div class="card">
-                    <img src="../img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
-                    </div>
-                    <div class="normal-text">Poziomka</div>
-                    <div class="normal-text">Ground Squirrel</div>
-                    <div class="normal-text">2 year</div>
-                    <div class="long-text">info about Poziomka fjdslkgfjdslkfjkldsjgfkldsjfkdsjfkdjfksd lfkjsdklfjdskljkldsjfklsd
-                    </div>    
-                </div>
+                        <div class="text-group">
+                            <div class="card">
+                                <img src="../img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
+                            </div>
+                            <div class="text-group2">
+                                <div class="normal-text">Poziomka</div>
+                                <div class="normal-text">Squirrel</div>
+                                <div class="normal-text">2 year</div>
+                            </div>
+                        </div>
+                        <div class="long-text">info about Poziomka dj kfjsdkf kfjskd sdfj skfjd kjkdf kfjd lkijghofgiljhg kjfk dkfgjdk sdkfjdks kjvgdkg kjfgdkf kjsdkd gfdkj jdhfsjd jdfhsjd cjhdvf jdsh
+                        </div> 
+  
                 </div>
 
                     <div class="calendar">
@@ -82,6 +90,16 @@
                 </div>
     </main>
     </div>
+
+    <script>
+    const hamMenu = document.getElementById('hamMenu');
+    const nav = document.getElementById('sideNav');
+
+    hamMenu.addEventListener('click', () => {
+        hamMenu.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    </script>
 
 </body>
 </html>
