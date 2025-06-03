@@ -40,6 +40,7 @@ label input[type="checkbox"] {
   padding: 1em 1.5em;            
   border-radius: 0.8em;          
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 2em;
 }
 
 .animal-label {
@@ -68,12 +69,66 @@ label input[type="checkbox"] {
   cursor: pointer;
 }
 
+.inputs, .checkboxes{
+    display: flex;
+  flex-direction: row;
+}
+
+.note-input{
+    width: 27vw;
+}
+
+
 
 @media only screen and (max-device-width: 420px) {
 
     main {
-        height: 89vh;
+        height: auto;
         width: 100vw;
     }
+
+    .select-section{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.animal-label {
+  font-size: 1em;
+  font-weight: bold;
+  color: #5d2e8c;
+}
+
+#animal {
+  font-size: 1em;
+  padding: 0.3em 0.5em;
+  color: #5d2e8c;
+}
+
+#confirm {
+  font-size: 1em;
+  width: 30vw;
+} 
+
+.repeat-info{
+    font-size: 1em;
+}
+
+.note-input{
+    width: 50vw;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-time{
+    width: 5em;
+
+}
+
+.checkboxes{
+  gap: 1em;
+}
 
 }
