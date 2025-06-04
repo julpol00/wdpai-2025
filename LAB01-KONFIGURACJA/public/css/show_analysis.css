@@ -7,7 +7,7 @@
 
 #analysis-range {
   font-size: 1.5em;
-  padding: 0.3em 0.5em;
+  padding: 0.3em;
   color: #5d2e8c;
 }
 
@@ -15,6 +15,13 @@
     margin-top: 2vh;
     display: flex;
     align-items: center;
+    gap: 2vw;
+}
+
+.select-section-3{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
 
@@ -34,4 +41,40 @@
 
 .graph{
     margin-top: 5vh;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+
+
+@media only screen and (max-device-width: 420px) {
+
+    main {
+        height: auto;
+        width: 100vw;
+    }
+
+    #analysis-range {
+    font-size: 1em;
+  }
+
+  .buttons{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+#select-section-2{
+  flex-direction: column;
+  gap: 2em;
+}
+
+#show {
+  height: 5vh;
+}
+
 }
