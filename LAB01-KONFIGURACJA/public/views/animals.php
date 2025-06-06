@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/animals.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/animals.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/6c7c83f719.js" crossorigin="anonymous"></script>
     <title>Animals</title>
 </head>
@@ -16,7 +16,7 @@
             <span></span>
         </div>
         <div class="logo-title">
-            <img src="../img/logo_2.svg" alt="Rodent Analytics logo">
+            <img src="public/img/logo_2.svg" alt="Rodent Analytics logo">
             <div class = "title-text">
             <span class="rodent">RODENT</span>
             <span class="analytics">ANALYTICS</span>
@@ -41,7 +41,7 @@
                     <div class="card-header">
                         <div class="card-title">Rufus</div>
                     </div>
-                    <img src="../img/uploads/campbella-chomik.png" alt="Rufus" class="card-image" />
+                    <img src="public/img/uploads/campbella-chomik.png" alt="Rufus" class="card-image" />
                     </div>
                 </a>
 
@@ -50,7 +50,7 @@
                     <div class="card-header">
                         <div class="card-title">Koko</div>
                     </div>
-                    <img src="../img/uploads/św3inka.jpg" alt="Koko" class="card-image" />
+                    <img src="public/img/uploads/św3inka.jpg" alt="Koko" class="card-image" />
                     </div>
                 </a>
 
@@ -59,7 +59,7 @@
                     <div class="card-header">
                         <div class="card-title">Benio</div>
                     </div>
-                    <img src="../img/uploads/szynszyl.jpg" alt="Benio" class="card-image" />
+                    <img src="public/img/uploads/szynszyl.jpg" alt="Benio" class="card-image" />
                     </div>
                 </a>
 
@@ -68,7 +68,7 @@
                     <div class="card-header">
                         <div class="card-title">Poziomka</div>
                     </div>
-                    <img src="../img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
+                    <img src="public/img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
                     </div>
                 </a>
 
@@ -77,7 +77,7 @@
                     <div class="card-header">
                         <div class="card-title">Zuzia</div>
                     </div>
-                    <img src="../img/uploads/rat.jpg" alt="Zuzia" class="card-image" />
+                    <img src="public/img/uploads/rat.jpg" alt="Zuzia" class="card-image" />
                     </div>
                 </a>
 
