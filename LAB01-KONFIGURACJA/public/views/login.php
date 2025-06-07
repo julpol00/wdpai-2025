@@ -12,10 +12,18 @@
             <img src = "public/img/logo.svg">
         </div>
         <div class = "login-container">
-            <form>
+            <form action="login" method="POST" >
+                <div class="messages">
+                    <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message)
+                                echo $message;
+                        }
+                    ?>
+                </div>
                 <input name="email" type="text" placeholder="EMAIL">
                 <input name="password" type="password" placeholder="PASSWORD">
-                <button class="continue">CONTINUE</button>
+                <button class="continue" type="submit">CONTINUE</button>
                 <button class="login_with_fb">LOGIN WITH FACEBOOK</button>
 
             </form>

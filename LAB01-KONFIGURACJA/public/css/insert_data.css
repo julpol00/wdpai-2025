@@ -78,6 +78,7 @@ main {
   transition: box-shadow 0.3s ease;
 }
 
+
 .input-field:hover {
   box-shadow: 0 0 10px #6a2a91;
       border: 2px solid #6a2a91;
@@ -87,7 +88,6 @@ main {
   color: #a3bebd;
   font-weight: 600;
   text-align: center;
-  border: 2px solid #6a2a91;
 }
 
 .textarea-field {
@@ -115,7 +115,6 @@ main {
 .textarea-field::placeholder {
   color: #a3bebd;
   font-weight: bold;
-    border: 2px solid #6a2a91;
 }
 
 .save-section {
