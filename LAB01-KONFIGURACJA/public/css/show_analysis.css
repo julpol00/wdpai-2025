@@ -22,10 +22,12 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
+    white-space: nowrap;
 }
 
 
-#show {
+
+.show-btn {
   background-color: #5d2e8c;
   color: #cde2de;
   font-weight: bold;
@@ -48,8 +50,6 @@
     align-items: center;
     gap: 2vw;
 }
-
-
 
 @media only screen and (max-device-width: 420px) {
 

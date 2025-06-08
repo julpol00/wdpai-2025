@@ -38,15 +38,15 @@
         <main>
                 <div class="wrapper">
                 <div class="pet-profile">
-                     <div class="select-section">
+                    <form class="select-section" method="POST"  action="add_notification">
                         <label for="animal" id="animal">Choose animal:</label>
                         <select id="animal" name="animal">
                         <option value="Poziomka">Poziomka</option>
                         <option value="Rufus">Rufus</option>
                         <option value="Koko">Koko</option>
                         </select>
-                        <div class="add-button" id="confirm">CONFIRM</div>
-                    </div>
+                        <button class="add-button" type="submit" id="confirm">CONFIRM</button>
+                    </form>
                     <div class="text-group">
                         <div class="card">
                         <img src="public/img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
@@ -99,21 +99,21 @@
                             <div class="repeat-info">Repeat weekly</div>
                             </div>
 
+                            <form class="notification-form" method="POST" action="add_notification">
                             <div class="note-form">
-                             <div class="inputs"> 
-                            <input type="time" class="input-time" required   value="00:00"/>
-                            <input type="text" class="note-input" placeholder="Add note..." required />
-                             </div>
-                             <div class="checkboxes">
-                            <label><input type="checkbox" name="daily-repeat" value="daily repeat">Daily repeat</label>
-                            <label><input type="checkbox" name="weekly-repet" value="weekly repeat">Weekly repeat</label>
-                             </div>
+                                <div class="inputs"> 
+                                    <input type="time" class="input-time" name="notification_time" required value="00:00"/>
+                                    <input type="text" class="note-input" name="notification_message" placeholder="Add note..." required />
+                                </div>
+                                <div class="checkboxes">
+                                    <label><input type="checkbox" name="daily_repeat" value="1">Daily repeat</label>
+                                    <label><input type="checkbox" name="weekly_repeat" value="1">Weekly repeat</label>
+                                </div>
                             </div>
+                            <button class="add-button">ADD NOTIFICATION</button>
+                            </form>
                         </div>
-                        <div class="add-button"> ADD NOTIFICATION</div>
                         </div>
-                
-                        
                     </section>
                     </div>
                  </div>

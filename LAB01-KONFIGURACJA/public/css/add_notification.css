@@ -29,14 +29,16 @@ label input[type="checkbox"] {
     font-size: 1.5em;
 }
 
-.select-section{
+form.select-section{
   display: flex;
+  flex-direction: row;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   color:  #5d2e8c;
   background-color: white;
   gap: 1em;
 
+  height: fit-content;
   padding: 1em 1.5em;            
   border-radius: 0.8em;          
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
@@ -78,7 +80,15 @@ label input[type="checkbox"] {
     width: 27vw;
 }
 
-
+.notification-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 @media only screen and (max-device-width: 420px) {
 

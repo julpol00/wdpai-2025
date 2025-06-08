@@ -8,10 +8,12 @@ $path = parse_url( $path, PHP_URL_PATH);
 Router::get('', 'DefaultController');
 Router::get('animals', 'DefaultController');
 Router::post('login', 'SecurityController');
-Router::get('add_notification', 'DefaultController');
+Router::post('add_notification', 'AddNotificationController');
+Router::get('add_notification', 'AddNotificationController');
 Router::get('insert_data', 'InsertDataController');
 Router::post('insert_data', 'InsertDataController');
 Router::get('pet_journal', 'DefaultController');
-Router::get('show_analysis', 'DefaultController');
+Router::get('show_analysis', 'ShowAnalysisController');
+Router::post('show_analysis', 'ShowAnalysisController');
 
 Router::run($path);

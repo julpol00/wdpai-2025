@@ -39,15 +39,15 @@
         <main>
                 <div class="wrapper">
                 <div class="pet-profile">
-                        <div class="select-section">
+                        <form class="select-section" method="POST"  action="show_analysis">
                             <label for="animal" id="animal">Choose animal:</label>
                             <select id="animal" name="animal">
                             <option value="Poziomka">Poziomka</option>
                             <option value="Rufus">Rufus</option>
                             <option value="Koko">Koko</option>
                             </select>
-                            <div class="add-button" id="confirm">CONFIRM</div>
-                        </div>
+                            <button class="add-button" type="submit" id="confirm">CONFIRM</button>
+                        </form>
                         <div class="text-group">
                             <div class="card">
                             <img src="public/img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
@@ -65,20 +65,21 @@
                     <div class="calendar">
                     <section class="calendar-section">
                         <label for="calendar" class="calendar-label">ANALYSIS</label>
-                        <div class="select-section" id="select-section-2">
+                        <form method="POST" action="?page=show_analysis" class="select-section" id="select-section-2">
                             <div class="select-section-3">
-                            <label for="analysis-range" id="analysis-range">Choose analysis range:</label>
-                            <select id="analysis-range" name="analysis-range">
-                                <option value="Poziomka">Daily</option>
-                                <option value="Rufus">Weekly</option>
-                                <option value="Koko">Monthly</option>
-                            </select>
+                                <label for="analysis-range" class="analysis-range">Choose analysis range:</label>
+                                <select id="analysis-range" name="range">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                </select>
                             </div>
                             <div class="buttons">
-                                <div class="add-button" id="show">SHOW WEIGHT</div>
-                                <div class="add-button" id="show">SHOW ACTIVITIES</div>
+                                <button class="add-button show-btn" type="submit" name="action" value="weight">SHOW WEIGHT</button>
+                                <button class="add-button show-btn" type="submit" name="action" value="activities">SHOW ACTIVITIES</button>
                             </div>
-                        </div>
+                        </form>
+
                          <img src="public/img/uploads/graph.png" alt="graph" class="graph"/>
                     </section>
                     </div>
