@@ -9,7 +9,8 @@ Router::get('', 'DefaultController');
 Router::get('animals', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::get('add_notification', 'DefaultController');
-Router::get('insert_data', 'DefaultController');
+Router::get('insert_data', 'InsertDataController');
+Router::post('insert_data', 'InsertDataController');
 Router::get('pet_journal', 'DefaultController');
 Router::get('show_analysis', 'DefaultController');
 

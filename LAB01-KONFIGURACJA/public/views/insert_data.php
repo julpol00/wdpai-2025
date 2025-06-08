@@ -35,24 +35,28 @@
             </ul>
          </nav>
         <main>
-            <div class="form-wrapper">
-                <div class="photo-section">
-                    <button class="photo-button">+</button>
+            <form class="form-wrapper" method="POST" enctype="multipart/form-data" action="insert_data">
+                <div class="photo-section" id="photo-section">
+                    <button type="button" class="photo-button" id="photo-button">+</button>
+                </div>
+                <div class="photo-upload-container" id="photo-upload-container" style="display: none;">
+                <input type="file" id="photo-input" name="photo" accept="image/*" />
+                <img id="photo-preview" style="display: none;" />
                 </div>
 
                 <div class="form-section">
-                      <div class="inputs-group">
-                    <input type="text" placeholder="name" class="input-field" />
-                    <input type="text" placeholder="species" class="input-field" />
-                    <input type="text" placeholder="birth" class="input-field" />
+                    <div class="inputs-group">
+                    <input type="text" name="name" placeholder="name" class="input-field" />
+                    <input type="text" name="species" placeholder="species" class="input-field" />
+                    <input type="text" name="birth" placeholder="birth" class="input-field" />
                       </div>
-                    <textarea placeholder="add notes" class="textarea-field"></textarea>
+                    <textarea placeholder="add notes"  name="notes" class="textarea-field"></textarea>
                 </div>
                  <div class="save-section">
                     <button class="save-button">SAVE</button>
-                 </div>
-            </div>
-    </main>
+                </div>
+            </form>
+         </main>
     </div>
 
     
@@ -64,6 +68,45 @@
         hamMenu.classList.toggle('active');
         nav.classList.toggle('active');
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const photoButton = document.getElementById('photo-button');
+        const photoInput = document.getElementById('photo-input');
+        const photoSection = document.getElementById('photo-section');
+
+        photoButton.addEventListener('click', function () {
+            photoButton.style.display = 'none';
+            photoSection.style.display = 'none'
+            photoInput.style.display = 'block';
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const photoButton = document.getElementById('photo-button');
+    const photoSection = document.getElementById('photo-section');
+    const photoUploadContainer = document.getElementById('photo-upload-container');
+    const photoInput = document.getElementById('photo-input');
+    const photoPreview = document.getElementById('photo-preview');
+
+    photoButton.addEventListener('click', function () {
+        photoSection.style.display = 'none';
+        photoUploadContainer.style.display = 'flex';
+    });
+
+        photoInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    photoPreview.src = e.target.result;
+                    photoPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+
+
     </script>
 
 

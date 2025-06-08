@@ -6,8 +6,9 @@ main {
   align-items: center;
 }
 
-.form-wrapper {
+form.form-wrapper {
   display: flex;
+  flex-direction: row; 
   gap: 4vw;
   align-items: stretch; 
   padding: 2rem;
@@ -44,6 +45,27 @@ main {
   color: white;
 }
 
+.photo-upload-container {
+  width: 18vw;
+  background: white;
+  border: 2px solid #a3bebd;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+#photo-preview {
+  max-width: 90%;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+}
+
 .form-section {
   display: flex;
   flex-direction: column;
@@ -54,6 +76,31 @@ main {
   position: relative;
 }
 
+.photo-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin: 10px 0;
+    max-width: 220px;
+}
+
+.custom-file-label {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.custom-file-label:hover {
+    background-color: #3a3a3a;
+}
+
+.custom-file-input {
+    width: 100%;
+}
 
 .inputs-group {
   display: flex;
@@ -128,7 +175,7 @@ main {
 
 @media only screen and (max-device-width: 420px) {
 
-  .form-wrapper {
+  form.form-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,6 +192,11 @@ main {
   .photo-section{
     height: 50vh;
   }
+
+  #photo-input {
+    width: 30%;   
+    display: block; 
+}
 
   .form-section {
     display: flex;
