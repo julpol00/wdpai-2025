@@ -53,12 +53,16 @@
                 </div>
 
                     <div class="calendar">
-                    <section class="calendar-section">
+                        <section class="calendar-section">
+                        <form method="POST" action="pet_journal" class="calendar-form">
                         <label for="calendar" class="calendar-label">CHOOSE DAY</label>
                         
                         <div class="calendar-row">
-                        <input type="date" id="calendar" class="calendar-input" />
-                        <span class="calendar-weight">weight: 250g</span>
+                        <input type="date" name="date" id="calendar" class="calendar-input" />
+                        <div class="weight">
+                        <input type="text" class="calendar-weight-input" name="weight" placeholder="weight" />
+                        <button class="add-button" type="submit">ADD</butoon>
+                        </div>
                         </div>
 
                         <div class="notes-section">
@@ -75,15 +79,15 @@
                             </div>
 
                             <div class="note-form">
-                            <input type="time" class="input-time" required   value="00:00"/>
-                            <input type="time" class="input-time" required  value="00:00"/>
-                            <input type="text" class="note-input" placeholder="Add note..." required />
+                            <input type="time" class="input-time" name="start-time" required   value="00:00"/>
+                            <input type="time" class="input-time" name="end-time" required  value="00:00"/>
+                            <input type="text" class="note-input" name="activity" placeholder="Add note..." required />
                             </div>
                         </div>
-                        <div class="add-button"> ADD ACTIVITY</div>
+                        <div class="add-button" type="sumbit"> ADD ACTIVITY</div>
                         </div>
                 
-                        
+                        </form>
                     </section>
                     </div>
                  </div>

@@ -69,6 +69,10 @@
   margin-top: 2em;
 }
 
+.calendar-weight-input{
+  width: 10vw;
+}
+
 
 .pet-profile {
   margin: 5em auto 0 auto;
@@ -87,13 +91,18 @@
 
 
 .calendar-section {
-  max-width: 1250px;
+    max-width: 1250px;
   margin: 4em auto;
   padding: 2em;
   background-color: #fff;
   border-radius: 1em;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
+}
+
+.calendar-form {
+  all: unset;
+  display: contents; 
 }
 
 .calendar-input {
@@ -313,6 +322,11 @@
   background: #5123a8;
 }
 
+.weight{
+  display: flex;
+  flex-direction: row;
+}
+
 
 @media only screen and (max-device-width: 420px) {
   .wrapper {
@@ -320,6 +334,12 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .weight{
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
 
   .pet-profile {
     width: 100%;
@@ -345,6 +365,13 @@
     height: auto;
     border-radius: 12px;
   }
+
+  .calendar-section {
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 1em;
+}
+
 
   .card {
   width: 50vw;
@@ -386,12 +413,6 @@
   min-height: 10vh;
   height: auto;
   padding: 1rem 1rem; 
-}
-
-.calendar-section {
-  max-width: 100vw;
-  margin: 0 auto;
-  padding: 1em;
 }
 
   .calendar-row {
@@ -461,5 +482,10 @@
   overflow-y: hidden;
   max-height: 1000vh;
 }
+
+.calendar-weight-input{
+  width: 30vw;
+}
+
 
 }
