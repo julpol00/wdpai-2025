@@ -100,10 +100,6 @@
   font-family: Arial, sans-serif;
 }
 
-.calendar-form {
-  all: unset;
-  display: contents; 
-}
 
 .calendar-input {
   display: block;
@@ -126,8 +122,12 @@
 .calendar-row {
   display: flex;
   align-items: center;
-   justify-content: space-between;
+  justify-content: center;
   width: 100%;
+}
+
+#calendar-input-2{
+  width: 44vw;
 }
 
 .activity-and-weight-button {
@@ -323,8 +323,17 @@
 }
 
 .weight{
+  all: unset;
+  display: contents; 
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.journal-form{
+  all: unset;
+  display: contents; 
 }
 
 
@@ -427,6 +436,7 @@
 }
 
 .calendar-input {
+  width: auto;
   margin: 1em 1em;
 }
 
@@ -474,8 +484,8 @@
 
   padding: 0 1.5rem;
   font-size: 1.3em;
-  width: 50vw;
-  height: 8vh; 
+  width: 15vw;
+  height: 6vh; 
 }
 
 .notes-list {
@@ -484,7 +494,16 @@
 }
 
 .calendar-weight-input{
+  width: 15vw;
+}
+
+
+#add-button-2{
   width: 30vw;
+}
+
+#calendar-input-2{
+  width: 80vw;
 }
 
 

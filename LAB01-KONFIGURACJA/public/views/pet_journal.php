@@ -54,41 +54,41 @@
 
                     <div class="calendar">
                         <section class="calendar-section">
-                        <form method="POST" action="pet_journal" class="calendar-form">
-                        <label for="calendar" class="calendar-label">CHOOSE DAY</label>
-                        
-                        <div class="calendar-row">
-                        <input type="date" name="date" id="calendar" class="calendar-input" />
-                        <div class="weight">
-                        <input type="text" class="calendar-weight-input" name="weight" placeholder="weight" />
-                        <button class="add-button" type="submit">ADD</butoon>
-                        </div>
-                        </div>
 
-                        <div class="notes-section">
-                        <div class="notes-list">
-                            <div class="note">
-                            <div class="note-time">8:00</div>
-                            <div class="note-time">9:00</div>
-                            <div class="note-text">playing</div>
-                            </div>
-                            <div class="note">
-                            <div class="note-time">10:00</div>
-                            <div class="note-time">13:00</div>
-                            <div class="note-text">sleeping</div>
-                            </div>
+                                
+                                <div class="calendar-row">
+                                    <form class="weight" method="POST" action="pet_journal">
+                                        <input type="date" name="date-weight" id="calendar" class="calendar-input" />
+                                        <input type="text" class="calendar-weight-input" name="weight" placeholder="weight" />
+                                        <button class="add-button" type="submit">ADD</butoon>
+                                    </form>
+                                </div>
+                                <form class="journal-form" method="POST" action="pet_journal">
+                                    <label for="calendar" class="calendar-label">CHOOSE DAY</label>
+                                    <input type="date" name="date" class="calendar-input" id="calendar-input-2" />
+                                    <div class="notes-section">
+                                        <div class="notes-list">
+                                            <div class="note">
+                                            <div class="note-time">8:00</div>
+                                            <div class="note-time">9:00</div>
+                                            <div class="note-text">playing</div>
+                                            </div>
+                                            <div class="note">
+                                            <div class="note-time">10:00</div>
+                                            <div class="note-time">13:00</div>
+                                            <div class="note-text">sleeping</div>
+                                            </div>
 
-                            <div class="note-form">
-                            <input type="time" class="input-time" name="start-time" required   value="00:00"/>
-                            <input type="time" class="input-time" name="end-time" required  value="00:00"/>
-                            <input type="text" class="note-input" name="activity" placeholder="Add note..." required />
-                            </div>
-                        </div>
-                        <div class="add-button" type="sumbit"> ADD ACTIVITY</div>
-                        </div>
-                
-                        </form>
-                    </section>
+                                            <div class="note-form">
+                                            <input type="time" class="input-time" name="start-time" required   value="00:00"/>
+                                            <input type="time" class="input-time" name="end-time" required  value="00:00"/>
+                                            <input type="text" class="note-input" name="activity" placeholder="Add note..." required />
+                                            </div>
+                                        </div>
+                                        <button class="add-button" id="add-button-2" type="sumbit"> ADD ACTIVITY</button>
+                                    </div>
+                                </form>
+                        </section>
                     </div>
                  </div>
                 </div>

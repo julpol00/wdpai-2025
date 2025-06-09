@@ -12,15 +12,16 @@ class PetJournalController extends AppController
 
         if (isset($_POST['weight'])) {
             $weight = $_POST['weight'] ?? '';
-            echo "<script>alert('PODANO WAGĘ: $weight');</script>";
+            $date_weight = $_POST['date-weight'] ?? '';
+            echo "<script>alert('PODANO WAGĘ: $weight dnia: $date_weight');</script>";
         }
 
         if (isset($_POST['activity'])) {
 
             $activity = $_POST['activity'] ?? 'brak';
             $date = $_POST['date'] ?? 'brak';
-            $start_time = isset($_POST['start-time']) ? 'tak' : 'nie';
-            $end_time = isset($_POST['end-time']) ? 'tak' : 'nie';
+            $start_time = $_POST['start-time'] ?? 'brak';
+            $end_time = $_POST['end-time'] ?? 'brak';
 
             echo "<script>
                 alert('Nowa aktywność:\\data: $date\\naktywność: $activity \\nstart_time: $start_time\\nend_time: $end_time');
