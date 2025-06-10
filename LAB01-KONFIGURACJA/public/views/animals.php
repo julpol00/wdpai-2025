@@ -27,9 +27,9 @@
         <nav id="sideNav">
             <ul>
                 <div class="menu-group">
-                    <li><i class="fa-solid fa-paw"></i> <a href="#" class="button">ANIMALS</a></li>
-                    <li><i class="fa-solid fa-chart-simple"></i><a href="#" class="button">ANALYSIS</a></li>
-                    <li><i class="fa-solid fa-bell"></i> <a href="#" class="button">NOTIFICATION</a></li>
+                    <li><i class="fa-solid fa-paw"></i> <a href="/animals" class="button">ANIMALS</a></li>
+                    <li><i class="fa-solid fa-chart-simple"></i><a href="/show_analysis" class="button">ANALYSIS</a></li>
+                    <li><i class="fa-solid fa-bell"></i> <a href="/add_notification" class="button">NOTIFICATION</a></li>
                 </div>
                 <li class="bottom-item"><i class="fa-solid fa-gears"></i> <a href="#" class="button">SETTINGS</a></li>
             </ul>
@@ -81,7 +81,7 @@
                     </div>
                 </a>
 
-                <a href="/add-animal" class="card-link">
+                <a href="/insert_data" class="card-link">
                     <div class="card-add-animals">
                     <i class="fa-solid fa-plus"></i>
                     </div>
