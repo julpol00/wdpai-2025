@@ -9,11 +9,6 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function animals()
-    {
-        $this->render('animals');
-    }
-
     public function add_notification()
     {
         $this->render('add_notification');

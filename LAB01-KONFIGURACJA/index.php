@@ -6,7 +6,7 @@ $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url( $path, PHP_URL_PATH);
 
 Router::get('', 'DefaultController');
-Router::get('animals', 'DefaultController');
+Router::get('animals', 'AnimalsController');
 Router::post('login', 'SecurityController');
 Router::post('add_notification', 'AddNotificationController');
 Router::get('add_notification', 'AddNotificationController');

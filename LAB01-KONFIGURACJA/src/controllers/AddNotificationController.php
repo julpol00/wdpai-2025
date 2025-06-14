@@ -1,12 +1,37 @@
 <?php
 
 require_once 'AppController.php';
+require_once __DIR__.'/../../db_config.php';
+require_once __DIR__ .'/../models/Animal.php';
+require_once __DIR__.'/../repository/AnimalRepository.php';
 
 class AddNotificationController extends AppController
 {
 
+    private $animalsRepository;
+
+        public function __construct()
+    {
+        parent::__construct();
+        $this->animalsRepository = new AnimalRepository();
+    }
+
     public function add_notification()
     {
+
+        if (!isset($_SESSION['user_id'])) {
+                    die('Musisz być zalogowany!');
+        }
+        $id_user = $_SESSION['user_id'];
+
+        $animals = $this->animalsRepository->getAnimals($id_user);
+
+         $selectedAnimal = null;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['animal'])) {
+            $animalId = (int)$_POST['animal'];
+            $selectedAnimal = $this->animalsRepository->getAnimal($animalId);
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
@@ -29,6 +54,6 @@ class AddNotificationController extends AppController
 
         }
 
-        $this->render('add_notification');
+        $this->render('add_notification',  ['animals' => $animals, 'selectedAnimal' => $selectedAnimal]);
     }
 }

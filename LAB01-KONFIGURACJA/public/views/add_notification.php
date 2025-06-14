@@ -37,30 +37,32 @@
          </nav>
         <main>
                 <div class="wrapper">
-                <div class="pet-profile">
-                    <form class="select-section" method="POST"  action="add_notification">
-                        <label for="animal" id="animal">Choose animal:</label>
-                        <select id="animal" name="animal">
-                        <option value="Poziomka">Poziomka</option>
-                        <option value="Rufus">Rufus</option>
-                        <option value="Koko">Koko</option>
-                        </select>
-                        <button class="add-button" type="submit" id="confirm">CONFIRM</button>
-                    </form>
-                    <div class="text-group">
-                        <div class="card">
-                        <img src="public/img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
+                    <div class="pet-profile">
+                        <form class="select-section" method="POST"  action="add_notification">
+                            <label for="animal" id="animal">Choose animal:</label>
+                            <select id="animal" name="animal">
+                            <?php foreach($animals as $animal) : ?>
+                            <option value="<?= $animal->getId(); ?>"><?= $animal->getName(); ?></option>
+                            <?php endforeach; ?>
+                            </select>
+                            <button class="add-button" type="submit" id="confirm">CONFIRM</button>
+                        </form>
+                            <?php if ($selectedAnimal): ?>
+                        <div class="text-group">
+                            <div class="card">
+                                <img src="public/uploads/<?= htmlspecialchars($selectedAnimal->getAvatar()) ?>" 
+                                    alt="<?= htmlspecialchars($selectedAnimal->getName()) ?>" class="card-image" />
+                            </div>
+                            <div class="text-group2">
+                                <div class="normal-text"><?= htmlspecialchars($selectedAnimal->getName()) ?></div>
+                                <div class="normal-text"><?= htmlspecialchars($selectedAnimal->getSpecies()) ?></div>
+                                <div class="normal-text"><?= htmlspecialchars($selectedAnimal->getBirth()) ?></div>
+                            </div>
                         </div>
-                        <div class="text-group2">
-                            <div class="normal-text">Poziomka</div>
-                            <div class="normal-text">Squirrel</div>
-                            <div class="normal-text">2 year</div>
-                        </div>
-                    </div>
-                        <div class="long-text">info about Poziomka fjdslkgfjdslkfjkldsjgfkldsjfkdsjfkdjfksd lfkjsdklfjdskljkldsjfklsd
-                        </div> 
+                        <div class="long-text"><?= htmlspecialchars($selectedAnimal->getDescription()) ?></div>
+                    <?php endif; ?>
+ 
                 </div>
-
                     <div class="calendar">
                     <section class="calendar-section">
                         <label for="calendar" class="calendar-label">NOTIFCATIONS</label>

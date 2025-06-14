@@ -36,51 +36,16 @@
         </nav>
         <main>
             <section class="animals-grid">
+                <?php foreach($animals as $animal) : ?>
                 <a href="/pet_journal" class="card-link">
                     <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Rufus</div>
+                        <div class="card-title"><?= $animal->getName(); ?></div>
                     </div>
-                    <img src="public/img/uploads/campbella-chomik.png" alt="Rufus" class="card-image" />
-                    </div>
-                </a>
-
-                <a href="/profile/koko" class="card-link">
-                    <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">Koko</div>
-                    </div>
-                    <img src="public/img/uploads/św3inka.jpg" alt="Koko" class="card-image" />
+                    <img src="public/img/uploads/<?= $animal->getAvatar(); ?>" alt="Rufus" class="card-image" />
                     </div>
                 </a>
-
-                <a href="/profile/benio" class="card-link">
-                    <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">Benio</div>
-                    </div>
-                    <img src="public/img/uploads/szynszyl.jpg" alt="Benio" class="card-image" />
-                    </div>
-                </a>
-
-                <a href="/profile/poziomka" class="card-link">
-                    <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">Poziomka</div>
-                    </div>
-                    <img src="public/img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
-                    </div>
-                </a>
-
-                <a href="/profile/zuzia" class="card-link">
-                    <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">Zuzia</div>
-                    </div>
-                    <img src="public/img/uploads/rat.jpg" alt="Zuzia" class="card-image" />
-                    </div>
-                </a>
-
+                <?php endforeach; ?>
                 <a href="/insert_data" class="card-link">
                     <div class="card-add-animals">
                     <i class="fa-solid fa-plus"></i>

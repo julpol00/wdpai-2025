@@ -6,6 +6,7 @@ require_once 'src/controllers/InsertDataController.php';
 require_once 'src/controllers/AddNotificationController.php';
 require_once 'src/controllers/ShowAnalysisController.php';
 require_once 'src/controllers/PetJournalController.php';
+require_once 'src/controllers/AnimalsController.php';
 
 
 class Router {
