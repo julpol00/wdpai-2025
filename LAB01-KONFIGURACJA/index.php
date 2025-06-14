@@ -16,5 +16,6 @@ Router::get('pet_journal', 'PetJournalController');
 Router::post('pet_journal', 'PetJournalController');
 Router::get('show_analysis', 'ShowAnalysisController');
 Router::post('show_analysis', 'ShowAnalysisController');
+Router::get('get_activities', 'PetJournalController');
 
 Router::run($path);

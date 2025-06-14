@@ -36,21 +36,20 @@
          </nav>
         <main>
                 <div class="wrapper">
-                <div class="pet-profile">
-                        <div class="text-group">
-                            <div class="card">
-                                <img src="public/img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
+                    <div class="pet-profile">
+                            <div class="text-group">
+                                    <div class="card">
+                                    <img src="public/uploads/<?= $animal->getAvatar(); ?>" 
+                                    alt="<?= $animal->getName(); ?>" class="card-image" />
                             </div>
                             <div class="text-group2">
-                                <div class="normal-text">Poziomka</div>
-                                <div class="normal-text">Squirrel</div>
-                                <div class="normal-text">2 year</div>
+                                <div class="normal-text"><?= $animal->getName(); ?></div>
+                                <div class="normal-text"><?= $animal->getSpecies(); ?></div>
+                                <div class="normal-text"><?= $animal->getBirth(); ?></div>
                             </div>
                         </div>
-                        <div class="long-text">info about Poziomka dj kfjsdkf kfjskd sdfj skfjd kjkdf kfjd lkijghofgiljhg kjfk dkfgjdk sdkfjdks kjvgdkg kjfgdkf kjsdkd gfdkj jdhfsjd jdfhsjd cjhdvf jdsh
+                        <div class="long-text"><?= $animal->getDescription(); ?></div>
                         </div> 
-  
-                </div>
 
                     <div class="calendar">
                         <section class="calendar-section">
@@ -58,36 +57,41 @@
                                 
                                 <div class="calendar-row">
                                     <form class="weight" method="POST" action="pet_journal">
+                                        <input type="hidden" name="animal_id" value="<?= $animal ? $animal->getId() : ''; ?>">
                                         <input type="date" name="date-weight" id="calendar" class="calendar-input" />
                                         <input type="text" class="calendar-weight-input" name="weight" placeholder="weight" />
                                         <button class="add-button" type="submit">ADD</butoon>
                                     </form>
                                 </div>
                                 <form class="journal-form" method="POST" action="pet_journal">
+                                    <input type="hidden" name="animal_id" value="<?= $animal ? $animal->getId() : ''; ?>">
                                     <label for="calendar" class="calendar-label">CHOOSE DAY</label>
-                                    <input type="date" name="date" class="calendar-input" id="calendar-input-2" />
+                                    <input type="date" name="date" class="calendar-input" id="calendar-input-2" value="<?= htmlspecialchars($selectedDate); ?>" />
                                     <div class="notes-section">
                                         <div class="notes-list">
-                                            <div class="note">
-                                            <div class="note-time">8:00</div>
-                                            <div class="note-time">9:00</div>
-                                            <div class="note-text">playing</div>
-                                            </div>
-                                            <div class="note">
-                                            <div class="note-time">10:00</div>
-                                            <div class="note-time">13:00</div>
-                                            <div class="note-text">sleeping</div>
-                                            </div>
-
-                                            <div class="note-form">
-                                            <input type="time" class="input-time" name="start-time" required   value="00:00"/>
-                                            <input type="time" class="input-time" name="end-time" required  value="00:00"/>
-                                            <input type="text" class="note-input" name="activity" placeholder="Add note..." required />
-                                            </div>
+                                            <?php if (!empty($activities)): ?>
+                                                <?php foreach ($activities as $activity): ?>
+                                                    <div class="note">
+                                                        <div class="note-time"><?= date('H:i', strtotime($activity->getStartTime()));?></div>
+                                                        <div class="note-time"><?= date('H:i', strtotime($activity->getEndTime())); ?></div>
+                                                        <div class="note-text"><?= $activity->getActivityText(); ?></div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            <?php else: ?>
+                                                <div class="note">
+                                                    <div class="note-text">No activities for this day.</div>
+                                                </div>
+                                            <?php endif; ?>
                                         </div>
-                                        <button class="add-button" id="add-button-2" type="sumbit"> ADD ACTIVITY</button>
+                                        <div class="note-form">
+                                            <input type="time" class="input-time" name="start-time" required value="00:00"/>
+                                            <input type="time" class="input-time" name="end-time" required value="00:00"/>
+                                            <input type="text" class="note-input" name="activity" placeholder="Add note..." required />
+                                            <button class="add-button" id="add-button-2" type="submit">ADD ACTIVITY</button>
+                                        </div>
                                     </div>
-                                </form>
+                        </form>
+
                         </section>
                     </div>
                  </div>
@@ -103,6 +107,19 @@
         hamMenu.classList.toggle('active');
         nav.classList.toggle('active');
     });
+
+
+    document.getElementById('calendar-input-2').addEventListener('change', function() {
+        const date = this.value;
+        const animalId = document.querySelector('input[name="animal_id"]').value;
+        fetch(`/get_activities?animal_id=${animalId}&date=${date}`)
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('.notes-list').innerHTML = html;
+            });
+    });
+
+
     </script>
 
 </body>

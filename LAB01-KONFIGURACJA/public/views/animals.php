@@ -37,7 +37,7 @@
         <main>
             <section class="animals-grid">
                 <?php foreach($animals as $animal) : ?>
-                <a href="/pet_journal" class="card-link">
+                <a href="/pet_journal?animal=<?= $animal->getId(); ?>" class="card-link">
                     <div class="card">
                     <div class="card-header">
                         <div class="card-title"><?= $animal->getName(); ?></div>
