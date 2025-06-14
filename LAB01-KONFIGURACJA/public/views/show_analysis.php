@@ -42,24 +42,26 @@
                         <form class="select-section" method="POST"  action="show_analysis">
                             <label for="animal" id="animal">Choose animal:</label>
                             <select id="animal" name="animal">
-                            <option value="Poziomka">Poziomka</option>
-                            <option value="Rufus">Rufus</option>
-                            <option value="Koko">Koko</option>
+                            <?php foreach($animals as $animal) : ?>
+                            <option value="<?= $animal->getId(); ?>"><?= $animal->getName(); ?></option>
+                            <?php endforeach; ?>
                             </select>
                             <button class="add-button" type="submit" id="confirm">CONFIRM</button>
                         </form>
+                            <?php if ($selectedAnimal): ?>
                         <div class="text-group">
                             <div class="card">
-                            <img src="public/img/uploads/suseł.jpg" alt="Poziomka" class="card-image" />
+                                <img src="public/uploads/<?= $selectedAnimal->getAvatar(); ?>" 
+                                    alt="<?= $selectedAnimal->getName(); ?>" class="card-image" />
                             </div>
                             <div class="text-group2">
-                                <div class="normal-text">Poziomka</div>
-                                <div class="normal-text">Ground Squirrel</div>
-                                <div class="normal-text">2 year</div>
-                            </div>   
+                                <div class="normal-text"><?= $selectedAnimal->getName(); ?></div>
+                                <div class="normal-text"><?= $selectedAnimal->getSpecies(); ?></div>
+                                <div class="normal-text"><?= $selectedAnimal->getBirth(); ?></div>
+                            </div>
                         </div>
-                        <div class="long-text">info about Poziomka fjdslkgfjdslkfjkldsjgfkldsjfkdsjfkdjfksd lfkjsdklfjdskljkldsjfklsd
-                        </div> 
+                        <div class="long-text"><?= $selectedAnimal->getDescription(); ?></div>
+                    <?php endif; ?>
                 </div>
 
                     <div class="calendar">

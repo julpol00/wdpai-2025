@@ -18,6 +18,11 @@ class Animal {
         $this->avatar = $avatar;
     }
 
+    public static function createNew($name, $species, $birth, $description, $avatar)
+    {
+        return new self(null, $name, $species, $birth, $description, $avatar);
+    }
+
     public function getName()
     {
         return $this->name;

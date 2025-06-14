@@ -41,8 +41,11 @@
                         <form class="select-section" method="POST"  action="add_notification">
                             <label for="animal" id="animal">Choose animal:</label>
                             <select id="animal" name="animal">
-                            <?php foreach($animals as $animal) : ?>
-                            <option value="<?= $animal->getId(); ?>"><?= $animal->getName(); ?></option>
+                             <?php foreach($animals as $animal): ?>
+                            <option value="<?= $animal->getId(); ?>"
+                                    <?php if (isset($selectedAnimalId) && $animal->getId() == $selectedAnimalId) echo 'selected'; ?>>
+                                    <?= $animal->getName(); ?>
+                                </option>
                             <?php endforeach; ?>
                             </select>
                             <button class="add-button" type="submit" id="confirm">CONFIRM</button>
@@ -50,16 +53,16 @@
                             <?php if ($selectedAnimal): ?>
                         <div class="text-group">
                             <div class="card">
-                                <img src="public/uploads/<?= htmlspecialchars($selectedAnimal->getAvatar()) ?>" 
-                                    alt="<?= htmlspecialchars($selectedAnimal->getName()) ?>" class="card-image" />
+                                <img src="public/uploads/<?= $selectedAnimal->getAvatar(); ?>" 
+                                    alt="<?= $selectedAnimal->getName(); ?>" class="card-image" />
                             </div>
                             <div class="text-group2">
-                                <div class="normal-text"><?= htmlspecialchars($selectedAnimal->getName()) ?></div>
-                                <div class="normal-text"><?= htmlspecialchars($selectedAnimal->getSpecies()) ?></div>
-                                <div class="normal-text"><?= htmlspecialchars($selectedAnimal->getBirth()) ?></div>
+                                <div class="normal-text"><?= $selectedAnimal->getName(); ?></div>
+                                <div class="normal-text"><?= $selectedAnimal->getSpecies(); ?></div>
+                                <div class="normal-text"><?= $selectedAnimal->getBirth(); ?></div>
                             </div>
                         </div>
-                        <div class="long-text"><?= htmlspecialchars($selectedAnimal->getDescription()) ?></div>
+                        <div class="long-text"><?= $selectedAnimal->getDescription(); ?></div>
                     <?php endif; ?>
  
                 </div>
@@ -69,39 +72,29 @@
 
                         <div class="notes-section">
                         <div class="notes-list">
+                        <?php foreach($notifications as $notification) : ?>
                             <div class="note">
-                            <div class="note-time">8:00</div>
-                            <div class="note-text">vet</div>
-                            <div class="repeat-info">No repeat</div>
+                                <div class="note-time"><?=  date('H:i', strtotime($notification->getNotificationTime())); ?></div>
+                                <div class="note-text"><?= $notification->getNotificationMessage(); ?></div>
+                                <div class="repeat-info"><?php
+                                    switch($notification->getRepeat()) {
+                                        case 'DAILY_REPEAT':
+                                            echo "Repeat daily";
+                                            break;
+                                        case 'WEEKLY_REPEAT':
+                                            echo "Repeat weekly";
+                                            break;
+                                        case 'NO_REPEAT':
+                                        default:
+                                            echo "No repeat";
+                                            break;
+                                    }
+                                ?>
+                                </div>
                             </div>
-                            <div class="note">
-                            <div class="note-time">10:00</div>
-                            <div class="note-text">Medicinie!</div>
-                            <div class="repeat-info">Repeat weekly</div>
-                            </div>
-                                                        <div class="note">
-                            <div class="note-time">10:00</div>
-                            <div class="note-text">Medicinie!</div>
-                            <div class="repeat-info">Repeat weekly</div>
-                            </div>
-
-                            <div class="note">
-                            <div class="note-time">10:00</div>
-                            <div class="note-text">Medicinie!</div>
-                            <div class="repeat-info">Repeat weekly</div>
-                            </div>
-                                                        <div class="note">
-                            <div class="note-time">10:00</div>
-                            <div class="note-text">Medicinie!</div>
-                            <div class="repeat-info">Repeat weekly</div>
-                            </div>
-                                                        <div class="note">
-                            <div class="note-time">10:00</div>
-                            <div class="note-text">Medicinie!</div>
-                            <div class="repeat-info">Repeat weekly</div>
-                            </div>
-
+                        <?php endforeach; ?>
                             <form class="notification-form" method="POST" action="add_notification">
+                            <input type="hidden" name="animal" value="<?= isset($selectedAnimalId) ? $selectedAnimalId : '' ?>">
                             <div class="note-form">
                                 <div class="inputs"> 
                                     <input type="time" class="input-time" name="notification_time" required value="00:00"/>

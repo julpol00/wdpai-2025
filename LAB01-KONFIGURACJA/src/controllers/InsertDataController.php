@@ -42,7 +42,7 @@ class InsertDataController extends AppController
 
             move_uploaded_file($_FILES['photo']['tmp_name'], dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['photo']['name']);
 
-            $animal = new Animal($name, $species, $birth, $notes, $avatar);
+            $animal = Animal::createNew($name, $species, $birth, $notes, $avatar);
             $this->animalRepository->addAnimal($animal, $id_user);
 
             $url = "http://$_SERVER[HTTP_HOST]";
