@@ -1,26 +1,34 @@
 <?php
 
+
+
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/User.php';
+require_once __DIR__.'/../../db_config.php';
 
 class SecurityController extends AppController {
 
     public function login()
     {   
-        $user = new User('jsnow@pk.edu.pl', password_hash('admin', PASSWORD_DEFAULT), 'Johnny', 'Snow');
+        global $pdo;
 
         if (!$this->isPost()) {
             return $this->render('login');
         }
 
-        $email = $_POST['email'];
+        $email = trim($_POST['email']);
         $password = $_POST['password'];
 
-        if ($user->getEmail() !== $email) {
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
+        $stmt->execute(['email' => $email]);
+        $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        if (!$userData) {
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if (!password_verify($password, $user->getPassword())) {
+        if (!password_verify($password, $userData['password'])) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 

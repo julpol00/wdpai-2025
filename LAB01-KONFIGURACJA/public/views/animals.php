@@ -36,7 +36,7 @@
         </nav>
         <main>
             <section class="animals-grid">
-                <a href="/profile/rufus" class="card-link">
+                <a href="/pet_journal" class="card-link">
                     <div class="card">
                     <div class="card-header">
                         <div class="card-title">Rufus</div>

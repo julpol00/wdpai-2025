@@ -22,6 +22,12 @@ services:
       - "5433:5432"
     networks:
       - pg-network
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: MojeHaslo
+      POSTGRES_DB: mydb
+    volumes:
+      - pg-data:/var/lib/postgresql/data
   
   php:
     build:
