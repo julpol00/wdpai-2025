@@ -111,7 +111,7 @@ class PetJournalController extends AppController
             echo '<div class="note">';
             echo '<div class="note-time">' . date('H:i', strtotime($activity->getStartTime())) . '</div>';
             echo '<div class="note-time">' . date('H:i', strtotime($activity->getEndTime())) . '</div>';
-            echo '<div class="note-text">' . htmlspecialchars($activity->getActivityText()) . '</div>';
+            echo '<div class="note-text">' . $activity->getActivityText() . '</div>';
             echo '</div>';
         }
     }
