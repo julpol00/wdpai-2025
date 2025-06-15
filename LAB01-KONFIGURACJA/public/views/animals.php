@@ -17,11 +17,12 @@
         </div>
         <div class="logo-title">
             <img src="public/img/logo_2.svg" alt="Rodent Analytics logo">
-            <div class = "title-text">
+            <div class="title-text">
             <span class="rodent">RODENT</span>
             <span class="analytics">ANALYTICS</span>
             </div>
         </div>
+        <a href="/logout.php" class="log-out">LOG OUT</a>
     </header>
     <div class="base-container">
         <nav id="sideNav">

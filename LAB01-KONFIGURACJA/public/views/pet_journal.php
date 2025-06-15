@@ -22,6 +22,7 @@
             <span class="analytics">ANALYTICS</span>
             </div>
         </div>
+        <a href="/logout.php" class="log-out">LOG OUT</a>
     </header>
     <div class="base-container">
         <nav  id="sideNav">

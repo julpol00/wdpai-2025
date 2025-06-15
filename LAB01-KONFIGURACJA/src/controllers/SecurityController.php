@@ -32,7 +32,9 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $_SESSION['user_id'] = $userData['id'];
 
         $url = "http://$_SERVER[HTTP_HOST]";
