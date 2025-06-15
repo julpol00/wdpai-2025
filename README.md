@@ -38,21 +38,20 @@ Perfect for all rodent owners who want to ensure the best care for their furry f
 
 ## Preview
 
-# Dashboard
+### Dashboard
 
 ![Dashboard](readme_img/dashboard.png)
 
-
-# Pet Journal
+### Pet Journal
 
 ![Pet_Journal](readme_img/pet_journal.png)
 
-# Mobile view
+### Mobile view
 
 ![mobile](readme_img/mobile.png)
 
 ## Data Base
 
-# Diagram ERD for data base
+### Diagram ERD for data base
 
 ![diagram_ERD](readme_img/Diagram_ERD.png)
