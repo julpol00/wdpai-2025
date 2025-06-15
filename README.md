@@ -1,4 +1,4 @@
-![Logo](public/img/logo.svg)
+![Logo](LAB01-KONFIGURACJA/public/img/logo.svg)
 
 # Rodent Analysis
 
